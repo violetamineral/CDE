@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.bash import BashOperator
-from cloudera.cdp.airflow.operators.cde_operator import CdeSparkSubmitOperator
+from cloudera.cdp.airflow.operators.cde_operator import CDEJobRunOperator
 
 default_args = {
     'owner': 'cde_user',
