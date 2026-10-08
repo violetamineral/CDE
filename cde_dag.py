@@ -34,4 +34,4 @@ with DAG(
         bash_command='echo "=== Airflow 파이프라인 완료 ==="'
     )
 
-    start_task >> check_git_version >> run_spark_job >> end_task
+    start_task >> run_spark_job >> end_task
