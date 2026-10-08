@@ -23,18 +23,6 @@ with DAG(
         task_id='start_pipeline',
         bash_command='echo "=== Airflow 파이프라인 시작 ==="'
     )
-
-    check_git_version = BashOperator(
-        task_id='check_git_version',
-        bash_command='''
-            echo "----------------------------------------"
-            echo " [Git 동기화 확인 테스트] "
-            echo " 실행 일시: $(date)"
-            echo " 새로운 Git 커밋 소스가 정상적으로 반영되었습니다."
-            echo "----------------------------------------"
-        '''
-    )
-
     # 수정된 Task 부분
     run_spark_job = CDEJobRunOperator(
         task_id='run_spark_test',
