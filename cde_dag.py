@@ -24,7 +24,7 @@ with DAG(
     )
 
     # CDE Spark Job 실행
-    run_spark_job = CdeSparkSubmitOperator(
+    run_spark_job = CDEJobRunOperator(
         task_id='run_spark_test',
         job_name='cde-spark-test-job'  # 下記 3단계에서 생성할 CDE Spark Job 이름
     )
